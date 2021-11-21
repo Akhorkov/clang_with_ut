@@ -15,12 +15,15 @@ add_subdirectory(googletest-release-1.11.0)
 include_directories(include)
 file(GLOB SRC src/*.cpp)
 add_executable(main ${SRC})
+target_include_directories(main
+  PUBLIC
+  include
+  )
 target_link_libraries(main
 		PUBLIC
 		gtest
 		gmock
 		gmock_main
-		atomic
 		)
 
 
